@@ -13,7 +13,8 @@
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     
-    // Drawing code here.
+    [[NSColor clearColor] set];
+    NSRectFill(self.frame);
 }
 
 @end
