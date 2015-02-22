@@ -19,7 +19,6 @@
                 styleMask:(NSUInteger)aStyle
                   backing:(NSBackingStoreType)bufferingType
                     defer:(BOOL)flag {
-    // TODO: correct the offset
     contentRect = [NSScreen mainScreen].frame;
     // Using NSBorderlessWindowMask results in a window without a title bar.
     self = [super initWithContentRect:contentRect styleMask:NSBorderlessWindowMask backing:NSBackingStoreBuffered defer:NO];
@@ -28,6 +27,7 @@
         [self setAlphaValue:1.0];
         // Turn off opacity so that the parts of the window that are not drawn into are transparent.
         [self setOpaque:NO];
+        [self setBackgroundColor:[NSColor clearColor]];
     }
     return self;
 }
