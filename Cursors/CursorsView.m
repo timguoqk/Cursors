@@ -11,7 +11,16 @@
 @implementation CursorsView
 
 - (void)drawRect:(NSRect)dirtyRect {
+    
     NSImage *cursor = [NSImage imageNamed:@"mac-cursor"];
+    //int cursorSize = [(NSNumber *)[[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.apple.universalaccess"][@"mouseDriverCursorSize"] intValue];
+    int factor = 90;
+    NSSize size;
+    size.width = 1192/factor;
+    size.height = 1788/factor;
+    [cursor setSize:size];
+    
+    
     NSImageView *cursorView = [[NSImageView alloc] initWithFrame:dirtyRect];
     cursorView.image = cursor;
     [self addSubview:cursorView];
