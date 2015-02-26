@@ -11,6 +11,10 @@
 @implementation CursorsView
 
 - (void)drawRect:(NSRect)dirtyRect {
+    NSImage *cursor = [NSImage imageNamed:@"mac-cursor"];
+    NSImageView *cursorView = [[NSImageView alloc] initWithFrame:dirtyRect];
+    cursorView.image = cursor;
+    [self addSubview:cursorView];
     [super drawRect:dirtyRect];
 }
 

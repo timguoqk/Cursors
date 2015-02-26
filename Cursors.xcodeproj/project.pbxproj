@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		280DB7BB1A99A0B200B2AAD0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 280DB7BA1A99A0B200B2AAD0 /* README.md */; };
 		28507DB11A986896000ACEF6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28507DB01A986896000ACEF6 /* AppDelegate.m */; };
 		28507DB31A986896000ACEF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28507DB21A986896000ACEF6 /* main.m */; };
 		28507DB51A986896000ACEF6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28507DB41A986896000ACEF6 /* Images.xcassets */; };
@@ -158,7 +157,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				280DB7BB1A99A0B200B2AAD0 /* README.md in Sources */,
 				28507DCF1A986907000ACEF6 /* CursorsView.m in Sources */,
 				28507DB31A986896000ACEF6 /* main.m in Sources */,
 				28507DD51A98693E000ACEF6 /* CursorsController.m in Sources */,
