@@ -10,4 +10,6 @@
 
 @interface CursorsView : NSView
 
+@property NSPoint cursor;
+
 @end
