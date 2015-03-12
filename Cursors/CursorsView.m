@@ -15,6 +15,8 @@
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     
+    [NSCursor hide];
+    
     // clear
     NSMutableArray *subviews = [NSMutableArray arrayWithArray:self.subviews];
     for (NSView *subView in subviews)
@@ -28,9 +30,8 @@
     size.height = 1788/factor;
     [cursorImage setSize:size];
     
-    // TODO: better startpoints
-    for (int i = cursor.x; i < dirtyRect.size.width; i += size.width + 100) {
-        for (int j = cursor.y; j < dirtyRect.size.height; j += size.height + 100) {
+    for (int i = (int)(cursor.x) % (int)(size.width + 100); i < dirtyRect.size.width; i += size.width + 100) {
+        for (int j = (int)(cursor.y) % (int)(size.height + 100); j < dirtyRect.size.height; j += size.height + 100) {
             NSRect rect;
             rect.size = size;
             rect.origin = CGPointMake(i, j);
