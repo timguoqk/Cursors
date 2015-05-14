@@ -14,24 +14,17 @@
 
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
-    
     [NSCursor hide];
     
     // clear
-    NSMutableArray *subviews = [NSMutableArray arrayWithArray:self.subviews];
-    for (NSView *subView in subviews)
-        [subView removeFromSuperview];
+    [self setSubviews:@[]];
     
     NSImage *cursorImage = [NSImage imageNamed:@"mac-cursor"];
-    //int cursorSize = [(NSNumber *)[[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.apple.universalaccess"][@"mouseDriverCursorSize"] intValue];
-    int factor = 90;
-    NSSize size;
-    size.width = 1192/factor;
-    size.height = 1788/factor;
+    NSSize size = NSMakeSize(13.24, 19.87);  // 90 times smaller
     [cursorImage setSize:size];
     
-    for (int i = (int)(cursor.x) % (int)(size.width + 100); i < dirtyRect.size.width; i += size.width + 100) {
-        for (int j = (int)(cursor.y) % (int)(size.height + 100); j < dirtyRect.size.height; j += size.height + 100) {
+    for (int i = (int)(cursor.x) % (int)(size.width + 150); i < dirtyRect.size.width; i += size.width + 150) {
+        for (int j = (int)(cursor.y) % (int)(size.height + 150); j < dirtyRect.size.height; j += size.height + 150) {
             NSRect rect;
             rect.size = size;
             rect.origin = CGPointMake(i, j);
